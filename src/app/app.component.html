@@ -2,16 +2,25 @@
   <h1>Verificar código</h1>
 </div>
 <div>
-  <form>
+  <form [formGroup]="formSmsCode">
     <div>
-      <input [(ngModel)]="digit1" name="digit1" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
-      <input [(ngModel)]="digit2" name="digit2" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
-      <input [(ngModel)]="digit3" name="digit3" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
-      <input [(ngModel)]="digit4" name="digit4" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
-      <input [(ngModel)]="digit5" name="digit5" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
-      <input [(ngModel)]="digit6" name="digit6" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+        <!-- <input [(ngModel)]="digit1" name="digit1" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+        <input [(ngModel)]="digit2" name="digit2" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+        <input [(ngModel)]="digit3" name="digit3" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+        <input [(ngModel)]="digit4" name="digit4" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+        <input [(ngModel)]="digit5" name="digit5" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+        <input [(ngModel)]="digit6" name="digit6" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel"> -->
+
+      <input formControlName="code1" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+      <input formControlName="code2" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+      <input formControlName="code3" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+      <input formControlName="code4" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+      <input formControlName="code5" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
+      <input formControlName="code6" (paste)="onPaste($event)" (keyup)="onDigitInput($event)" type="tel">
     </div>
   </form>
 </div>
+
+<button (click)="rellenarCamposForm('123456')">Rellenar</button>
 
 <router-outlet></router-outlet>
